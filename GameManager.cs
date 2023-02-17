@@ -15,7 +15,7 @@ namespace A1_CS251 {
                 gameLogic.DisplayBoard(gameBoard);
                 foreach (Player P in player){
                     P.GetMove();
-                    if (gameLogic.IsWinner(gameBoard)){
+                    if (gameLogic.IsWinner(gameBoard , P.GetSymbol())){
                         Console.WriteLine(P.GetName() + " is Winner!!"); 
                         gameLogic.DisplayBoard(gameBoard);  //board is displayed for the last time.
                         gameIsRunning = false;
