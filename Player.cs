@@ -25,7 +25,8 @@ namespace A1_CS251 {
             return symbol;
         }
         public virtual void GetMove() {
-            gameLogic.GetMove();
+            if(gameLogic != null)
+                gameLogic.GetMove();
         }
     }
 }
