@@ -1,7 +1,5 @@
 namespace A1_CS251 {
     public class GameManager {
-        // static int x, y;
-         bool gameIsRunning = true;
         Player[] player = new Player[2];
         Board gameBoard = new Board(0, 0);
         IGameLogic? gameLogic;
@@ -9,17 +7,21 @@ namespace A1_CS251 {
             gameLogic = new XO_GameLogic(ref gameBoard);  
             player[0] = new Player('1', 'o', gameLogic);
             player[1] = new Player('2','x', gameLogic);
-            Console.WriteLine(player[1].GetName());
-            // gameBoard = new Board(3, 3);
-            while(gameIsRunning) {
-                gameLogic.DisplayBoard(gameBoard);
+            gameLogic.DisplayBoard(gameBoard);
+            while(true) {
                 foreach (Player P in player){
                     P.GetMove();
+                    while(!gameLogic.IsValidMove(ref gameBoard, P.GetSymbol())){
+                        P.GetMove();
+                    }
+                    gameLogic.DisplayBoard(gameBoard);
                     if (gameLogic.IsWinner(gameBoard , P.GetSymbol())){
-                        Console.WriteLine(P.GetName() + " is Winner!!"); 
-                        gameLogic.DisplayBoard(gameBoard);  //board is displayed for the last time.
-                        gameIsRunning = false;
-                        break;
+                        Console.WriteLine(P.GetName() + " Wins!!"); 
+                        return;
+                    }
+                    else if (gameLogic.IsDraw(gameBoard)){
+                        Console.WriteLine( " Draw!!"); 
+                        return;
                     }
                 }
             }

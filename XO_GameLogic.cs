@@ -53,5 +53,17 @@ namespace A1_CS251 {
             }
             return false;
         }
+
+        public bool IsDraw(Board board){
+            int count = 0;
+            for (int i = 0; i < board.GetLength(); i++){
+                for (int j = 0; j < board.GetWidth(); j++){
+                    if (board.GetPosition(i,j) != '.') count++;
+                }
+            }
+            if (count == 9) return true;
+            else return false;
+        }
     }
+
 }

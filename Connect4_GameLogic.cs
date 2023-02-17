@@ -9,6 +9,11 @@ namespace A1_CS251 {
             throw new NotImplementedException();
         }
 
+        public bool IsDraw(Board board)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool IsValidMove(ref Board board, char symbol) {
             throw new NotImplementedException();
         }
