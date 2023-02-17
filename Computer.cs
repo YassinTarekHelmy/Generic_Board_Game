@@ -4,8 +4,9 @@ namespace A1_CS251 {
             name = "Computer";
         }
 
-        public override void GetMove() {
-            base.GetMove();
+        public override void GetMove(Board board) {
+            if (gameLogic != null)
+                gameLogic.ComputerMove(board, symbol);
         }
     }
 }

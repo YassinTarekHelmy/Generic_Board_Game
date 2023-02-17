@@ -24,7 +24,8 @@ namespace A1_CS251 {
         public char GetSymbol() {
             return symbol;
         }
-        public virtual void GetMove() {
+        
+        public virtual void GetMove(Board board) {
             if(gameLogic != null)
                 gameLogic.GetMove();
         }
