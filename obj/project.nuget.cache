@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zYHuhhAvioLhGuDirkDAPlWESbwGBGBC2t0pluerGabx+jCMwHLkuhkG2ZJgtjfepttMQhx7HqdjAOO2qt7GlA==",
+  "dgSpecHash": "+RA/wkWhoUoPHRjXaBC7Xyd9Dl7T4gzN1BqQoNDQg2Q+L7PLa5GUTUd+wK4TuGcf6u647+7ykqb2fzpAT8INqQ==",
   "success": true,
-  "projectFilePath": "E:\\College Stuff\\GenericBoardGame\\GenericBoardGame.csproj",
+  "projectFilePath": "E:\\projects\\A1_CS251\\GenericBoardGame.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

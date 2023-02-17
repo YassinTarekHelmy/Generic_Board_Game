@@ -13,3 +13,18 @@ E:\College Stuff\GenericBoardGame\obj\Debug\net7.0\refint\GenericBoardGame.dll
 E:\College Stuff\GenericBoardGame\obj\Debug\net7.0\GenericBoardGame.pdb
 E:\College Stuff\GenericBoardGame\obj\Debug\net7.0\GenericBoardGame.genruntimeconfig.cache
 E:\College Stuff\GenericBoardGame\obj\Debug\net7.0\ref\GenericBoardGame.dll
+E:\projects\A1_CS251\bin\Debug\net7.0\GenericBoardGame.exe
+E:\projects\A1_CS251\bin\Debug\net7.0\GenericBoardGame.deps.json
+E:\projects\A1_CS251\bin\Debug\net7.0\GenericBoardGame.runtimeconfig.json
+E:\projects\A1_CS251\bin\Debug\net7.0\GenericBoardGame.dll
+E:\projects\A1_CS251\bin\Debug\net7.0\GenericBoardGame.pdb
+E:\projects\A1_CS251\obj\Debug\net7.0\GenericBoardGame.csproj.AssemblyReference.cache
+E:\projects\A1_CS251\obj\Debug\net7.0\GenericBoardGame.GeneratedMSBuildEditorConfig.editorconfig
+E:\projects\A1_CS251\obj\Debug\net7.0\GenericBoardGame.AssemblyInfoInputs.cache
+E:\projects\A1_CS251\obj\Debug\net7.0\GenericBoardGame.AssemblyInfo.cs
+E:\projects\A1_CS251\obj\Debug\net7.0\GenericBoardGame.csproj.CoreCompileInputs.cache
+E:\projects\A1_CS251\obj\Debug\net7.0\GenericBoardGame.dll
+E:\projects\A1_CS251\obj\Debug\net7.0\refint\GenericBoardGame.dll
+E:\projects\A1_CS251\obj\Debug\net7.0\GenericBoardGame.pdb
+E:\projects\A1_CS251\obj\Debug\net7.0\GenericBoardGame.genruntimeconfig.cache
+E:\projects\A1_CS251\obj\Debug\net7.0\ref\GenericBoardGame.dll
