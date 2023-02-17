@@ -1,10 +1,19 @@
 namespace A1_CS251 {
     public class Connect4_GameLogic : IGameLogic {
-        public bool IsValidMove(Board board, int x, int y) {
+        public void DisplayBoard(Board board) {
             throw new NotImplementedException();
         }
 
-        public bool IsWinner() {
+        public void GetMove()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsValidMove(ref Board board, char symbol) {
+            throw new NotImplementedException();
+        }
+
+        public bool IsWinner(Board board) {
             throw new NotImplementedException();
         }
     }

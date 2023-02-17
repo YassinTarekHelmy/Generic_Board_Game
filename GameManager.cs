@@ -7,13 +7,13 @@ namespace A1_CS251 {
         public void Run() {
             gameLogic = new XO_GameLogic(ref gameBoard);
             
-            player[0] = new Player('1', 'y');
-            player[1] = new Player('2', 'x');
-            Console.WriteLine(player[0].GetName());
+            player[0] = new Player('1', 'y', gameLogic);
+            player[1] = new Computer('x', gameLogic);
+            Console.WriteLine(player[1].GetName());
             // gameBoard = new Board(3, 3);
             while(true) {
-                if (gameLogic.IsWinner()){
-                    gameBoard.DisplayBoard();
+                if (gameLogic.IsWinner(gameBoard)){
+                    gameLogic.DisplayBoard(gameBoard);
                     break;
                 }
             }
