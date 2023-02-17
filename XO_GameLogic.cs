@@ -1,9 +1,9 @@
 namespace A1_CS251 {
     public class XO_GameLogic : IGameLogic {
         int x, y;
-
+        const int WIDTH= 3, LENGTH = 3;
         public XO_GameLogic(ref Board board) {
-            board = new Board(3, 3);
+            board = new Board(WIDTH, LENGTH);
         }
 
         public bool IsValidMove(ref Board board, char symbol) {
@@ -22,8 +22,8 @@ namespace A1_CS251 {
         }
 
         public void DisplayBoard(Board board) {
-            for (int i = 0; i < board.GetWidth(); i++) {
-                for (int j = 0; j < board.GetLength(); j++) {
+            for (int i = 0; i < WIDTH; i++) {
+                for (int j = 0; j < LENGTH; j++) {
                     Console.Write($"({i}, {j}) ");
                     Console.Write(board.GetPosition(i, j));
                     Console.Write(" |");
@@ -32,8 +32,26 @@ namespace A1_CS251 {
             }
         }
 
-        public bool IsWinner(Board board) {
-            return true;
+        public bool IsWinner(Board board , char symbol) {
+            for (int i = 0; i < LENGTH; i++)
+            {
+                if(board.GetPosition(i,0) == symbol && board.GetPosition(i,1) == symbol && board.GetPosition(i,2) == symbol){
+                    return true;
+                }
+                if(board.GetPosition(0,i) == symbol && board.GetPosition(1,i) == symbol && board.GetPosition(2,i) == symbol){
+                    return true;
+                }
+                
+            }
+            if (board.GetPosition(0,0) == symbol && board.GetPosition(1,1) == symbol && board.GetPosition(2,2) == symbol)
+            {
+                return true;
+            }
+            if (board.GetPosition(2,0) == symbol && board.GetPosition(1,1) == symbol && board.GetPosition(0,2) == symbol)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
