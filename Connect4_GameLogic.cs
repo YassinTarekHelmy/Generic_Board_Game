@@ -13,7 +13,7 @@ namespace A1_CS251 {
             throw new NotImplementedException();
         }
 
-        public bool IsWinner(Board board , char symbol) {
+        public bool IsWinner(Board board) {
             throw new NotImplementedException();
         }
     }

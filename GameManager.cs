@@ -1,7 +1,7 @@
 namespace A1_CS251 {
     public class GameManager {
         // static int x, y;
-        bool gameIsRunning = true;
+         bool gameIsRunning = true;
         Player[] player = new Player[2];
         Board gameBoard = new Board(0, 0);
         IGameLogic? gameLogic;
@@ -15,7 +15,7 @@ namespace A1_CS251 {
                 gameLogic.DisplayBoard(gameBoard);
                 foreach (Player P in player){
                     P.GetMove();
-                    if (gameLogic.IsWinner(gameBoard,P.GetSymbol())){
+                    if (gameLogic.IsWinner(gameBoard)){
                         Console.WriteLine(P.GetName() + " is Winner!!"); 
                         gameLogic.DisplayBoard(gameBoard);  //board is displayed for the last time.
                         gameIsRunning = false;
