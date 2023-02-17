@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\projects\\A1_CS251\\GenericBoardGame.csproj": {}
+    "G:\\Github\\A1_CS251\\GenericBoardGame.csproj": {}
   },
   "projects": {
-    "E:\\projects\\A1_CS251\\GenericBoardGame.csproj": {
+    "G:\\Github\\A1_CS251\\GenericBoardGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\projects\\A1_CS251\\GenericBoardGame.csproj",
+        "projectUniqueName": "G:\\Github\\A1_CS251\\GenericBoardGame.csproj",
         "projectName": "GenericBoardGame",
-        "projectPath": "E:\\projects\\A1_CS251\\GenericBoardGame.csproj",
-        "packagesPath": "C:\\Users\\Nour eldeen\\.nuget\\packages\\",
-        "outputPath": "E:\\projects\\A1_CS251\\obj\\",
+        "projectPath": "G:\\Github\\A1_CS251\\GenericBoardGame.csproj",
+        "packagesPath": "C:\\Users\\Mahmoud\\.nuget\\packages\\",
+        "outputPath": "G:\\Github\\A1_CS251\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nour eldeen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Mahmoud\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

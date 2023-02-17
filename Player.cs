@@ -1,24 +1,29 @@
-namespace A1_CS251
-{
-    class Player
-    {
-        string name;
-        char symbol;
-        public Player(string Name , char Symbol){
-            this.name = Name;
-            this.symbol = Symbol;
+namespace A1_CS251 {
+    class Player {
+        char order;
+        protected string? name;
+        protected char symbol;
+        public Player(char order, char symbol) {
+            Console.Write("Please Enter your name: ");
+            name = Console.ReadLine();
+            this.order = order;
+            this.symbol = symbol;
+
         }
-        public string getName(){
-            return this.name;
+        public string GetName() {
+            if (name == "" || name == null)
+                return "Player " + order;
+            return name;
+            
         }
-        public char getSymbol(){
-            return this.symbol;
+        public char GetSymbol() {
+            return symbol;
         }
-        public void getMove(ref int x , ref int y){
-            System.Console.Write("enter the length: ");
-            x=Convert.ToInt32(Console.ReadLine());
-            System.Console.Write("enter the width: ");
-            y=Convert.ToInt32(Console.ReadLine());
+        public void GetMove(ref int x, ref int y) {
+            Console.Write("Enter X position: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter Y Position: ");
+            y = Convert.ToInt32(Console.ReadLine());
         }
     }
 }
