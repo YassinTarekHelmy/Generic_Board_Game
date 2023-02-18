@@ -7,6 +7,8 @@ namespace A1_CS251 {
         }
 
         public bool IsValidMove(ref Board board, char symbol) {
+            if (x < 0 || y < 0 || x > 2 || y > 2) return false;
+
             if (board.GetPosition(x, y) == '.') {
                 board.UpdateBoard(x, y, symbol);
                 return true;
@@ -30,26 +32,26 @@ namespace A1_CS251 {
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("---------------------\n");
+            Console.WriteLine("----------------------------\n");
         }
 
         public bool IsWinner(Board board) {
             for (int i = 0; i < LENGTH; i++) {
-                if (board.GetPosition(i, 0) == board.GetPosition(i, 1) && 
+                if (board.GetPosition(i, 0) == board.GetPosition(i, 1) &&
                     board.GetPosition(i, 2) == board.GetPosition(i, 0) && board.GetPosition(i, 0) != '.') {
                     return true;
                 }
-                if (board.GetPosition(0, i) == board.GetPosition(1, i) && 
+                if (board.GetPosition(0, i) == board.GetPosition(1, i) &&
                     board.GetPosition(2, i) == board.GetPosition(0, i) && board.GetPosition(0, i) != '.') {
                     return true;
                 }
 
             }
-            if (board.GetPosition(0, 0) == board.GetPosition(1, 1) && 
+            if (board.GetPosition(0, 0) == board.GetPosition(1, 1) &&
                 board.GetPosition(2, 2) == board.GetPosition(0, 0) && board.GetPosition(0, 0) != '.') {
                 return true;
             }
-            if (board.GetPosition(2, 0) == board.GetPosition(1, 1) && 
+            if (board.GetPosition(2, 0) == board.GetPosition(1, 1) &&
                 board.GetPosition(0, 2) == board.GetPosition(2, 0) && board.GetPosition(2, 0) != '.') {
                 return true;
             }
@@ -81,10 +83,10 @@ namespace A1_CS251 {
             return count;
         }
 
-        int minimax(bool isMax, Board board, char symbol, char opponent){
-            if(IsWinner(board) && !isMax) return 2 * GetCount(board);
-            else if(IsWinner(board) && isMax) return -1 * GetCount(board);
-            if(IsDraw(board)) return 1 * GetCount(board);
+        int minimax(bool isMax, Board board, char symbol, char opponent) {
+            if (IsWinner(board) && !isMax) return 2 * GetCount(board);
+            else if (IsWinner(board) && isMax) return -1 * GetCount(board);
+            if (IsDraw(board)) return 1 * GetCount(board);
 
             int best = isMax ? -1000 : 1000;
             for (int i = 0; i < 3; i++) {
@@ -119,7 +121,7 @@ namespace A1_CS251 {
             int bestScore = -1000;
             for (int i = 0; i < WIDTH; i++) {
                 for (int j = 0; j < LENGTH; j++) {
-                    if(board.GetPosition(i,j) == '.') {
+                    if (board.GetPosition(i, j) == '.') {
                         board.UpdateBoard(i, j, symbol);
 
                         int value = minimax(false, board, symbol, opponent);
