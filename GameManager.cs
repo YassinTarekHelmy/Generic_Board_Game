@@ -4,9 +4,9 @@ namespace A1_CS251 {
         Board gameBoard = new Board(0, 0);
         IGameLogic? gameLogic;
         public void Run() {
-            gameLogic = new XO_GameLogic(ref gameBoard);
+            gameLogic = new Connect4_GameLogic(ref gameBoard);
             player[0] = new Player('1', 'O', gameLogic);
-            player[1] = new Computer('X', gameLogic);
+            player[1] = new Player('2','X', gameLogic);
             gameLogic.DisplayBoard(gameBoard);
             while (true) {
                 foreach (Player P in player) {
