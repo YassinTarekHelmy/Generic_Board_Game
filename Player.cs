@@ -5,7 +5,10 @@ namespace A1_CS251 {
         protected char symbol;
         protected IGameLogic? gameLogic;
 
-        public Player(char symbol, IGameLogic gameLogic) { }
+        public Player(char symbol, IGameLogic gameLogic) {
+            this.symbol = symbol;
+            this.gameLogic = gameLogic;
+        }
 
         public Player(char order, char symbol, IGameLogic gameLogic) {
             Console.Write($"Player {order} Please Enter your name: ");
