@@ -6,7 +6,7 @@ namespace A1_CS251 {
         public void Run() {
             gameLogic = new Connect4_GameLogic(ref gameBoard);
             player[0] = new Player('1', 'O', gameLogic);
-            player[1] = new Player('2','X', gameLogic);
+            player[1] = new Computer('X', gameLogic);
             gameLogic.DisplayBoard(gameBoard);
             while (true) {
                 foreach (Player P in player) {
@@ -19,7 +19,7 @@ namespace A1_CS251 {
                     if (gameLogic.IsWinner(gameBoard)) {
                         Console.WriteLine(P.GetName() + " Wins!!");
                         return;
-                    } 
+                    }
                     if (gameLogic.IsDraw(gameBoard)) {
                         Console.WriteLine(" Draw!!");
                         return;

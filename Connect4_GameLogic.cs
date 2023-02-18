@@ -5,9 +5,6 @@ namespace A1_CS251 {
         public Connect4_GameLogic(ref Board board) {
             board = new Board(WIDTH, LENGTH);
         }
-        public void ComputerMove(Board board, char symbol) {
-            throw new NotImplementedException();
-        }
 
         public void DisplayBoard(Board board) {
             for (int i = 0; i < LENGTH; i++) {
@@ -43,6 +40,18 @@ namespace A1_CS251 {
             for (int i = WIDTH - 1; i >= 0; i--) {
                 if (board.GetPosition(i, column) == '.') {
                     board.UpdateBoard(i, column, symbol);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool IsValidMove(Board board, char symbol, int col) {
+            if (col < 1 || col > 7) return false;
+            col--;
+            for (int i = WIDTH - 1; i >= 0; i--) {
+                if (board.GetPosition(i, col) == '.') {
+                    board.UpdateBoard(i, col, symbol);
                     return true;
                 }
             }
@@ -95,6 +104,64 @@ namespace A1_CS251 {
             }
 
             return false;
+        }
+
+        int GetCount(ref Board board) {
+            int count = 1;
+            for (int i = 0; i < WIDTH; i++) {
+                for (int j = 0; j < LENGTH; j++) {
+                    if (board.GetPosition(i, j) == '.') count++;
+                }
+            }
+
+            return count;
+        }
+
+        int minimax(bool isMax, ref Board board, char symbol, char opponent) {
+            if (IsWinner(board) && !isMax) return 2 * GetCount(ref board);
+            else if (IsWinner(board) && isMax) return -1 * GetCount(ref board);
+            if (IsDraw(board)) return 1 * GetCount(ref board);
+
+
+            int best = isMax ? -1000 : 1000;
+            Board temp = board;
+
+            for (int col = 1; col <= LENGTH; col++) { 
+                if(IsValidMove(board, isMax ? symbol : opponent, col)) {
+                    int val = minimax(!isMax, ref board, symbol, opponent);
+
+                    if (isMax) {
+                        // for maximizing AI
+                        // replace best with val if val > best
+                        if (val > best) best = val;
+                    } else {
+                        // for minimizing player
+                        // replace best with val if val < best
+                        if (val < best) best = val;
+                    }
+
+                    board = temp;
+                }
+            }
+            return best;
+        }
+
+        public void ComputerMove(Board board, char symbol) {
+            char opponent = symbol == 'X' ? 'O' : 'X';
+            int bestScore = -1000;
+            Board tempBoard = board;
+            
+            for (int col = 1; col <= LENGTH; col++) {
+                if (IsValidMove(board, symbol, col)) {
+                    int value = minimax(false, ref board, symbol, opponent);
+                    board = tempBoard;
+
+                    if (value >= bestScore) {
+                        column = col;
+                        bestScore = value;
+                    }
+                }
+            }
         }
     }
 }
