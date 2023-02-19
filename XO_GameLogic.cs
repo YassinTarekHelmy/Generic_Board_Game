@@ -16,11 +16,24 @@ namespace A1_CS251 {
             return false;
         }
 
+        public void CorrectInputs() {
+            Console.WriteLine("Both X and Y should take values from 0 to 2");
+        }
+        
         public void GetMove() {
-            Console.Write("Enter X position: ");
-            x = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter Y Position: ");
-            y = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Please input X and Y positions separated by space: ");
+
+            string? multiInput;
+            multiInput = Console.ReadLine();
+
+            if (multiInput != null) {
+                List<string> inputs = multiInput.Split(' ').ToList();
+
+                if (inputs.Count != 2 || !int.TryParse(inputs[0], out x) || !int.TryParse(inputs[1], out y)) {
+                    Console.WriteLine("Please input two numbers only!");
+                    GetMove();
+                }
+            }
         }
 
         public void DisplayBoard(Board board) {
@@ -118,24 +131,40 @@ namespace A1_CS251 {
 
         public void ComputerMove(Board board, char symbol) {
             char opponent = symbol == 'X' ? 'O' : 'X';
-            int bestScore = -1000;
+            var moves = new List<Tuple<Position, int>>();
+
+            // int bestScore = -1000;
             for (int i = 0; i < WIDTH; i++) {
                 for (int j = 0; j < LENGTH; j++) {
                     if (board.GetPosition(i, j) == '.') {
                         board.UpdateBoard(i, j, symbol);
 
-                        int value = minimax(false, board, symbol, opponent);
+                        moves.Add(Tuple.Create(new Position(i, j), minimax(false, board, symbol, opponent)));
 
                         board.UpdateBoard(i, j, '.');
 
-                        if (value >= bestScore) {
-                            x = i;
-                            y = j;
-                            bestScore = value;
-                        }
+                        // if (value >= bestScore) {
+                        //     x = i;
+                        //     y = j;
+                        //     bestScore = value;
+                        // }
                     }
                 }
             }
+
+            var random = new Random();
+            int maxMoveScore = moves.Max(t => t.Item2);
+            var bestMoves = moves.Where(t => t.Item2 == maxMoveScore).ToList();
+            Position position = bestMoves[random.Next(0, bestMoves.Count)].Item1;
+            x = position.x;
+            y = position.y;
+        }
+    }
+
+    class Position {
+        public int x, y;
+        public Position(int i, int j) {
+            x = i; y = j;
         }
     }
 

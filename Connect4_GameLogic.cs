@@ -1,3 +1,5 @@
+using System;
+
 namespace A1_CS251 {
     public class Connect4_GameLogic : IGameLogic {
         int column;
@@ -20,9 +22,16 @@ namespace A1_CS251 {
             Console.WriteLine("-----------------------------------------");
         }
 
+        public void CorrectInputs() {
+            Console.WriteLine("Please Input a value from 1 to 7");
+        }
+        
         public void GetMove() {
-            Console.Write("Enter a col:");
-            column = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter a column: ");
+            if(!int.TryParse(Console.ReadLine(), out column)) {
+                Console.WriteLine("Please input numbers only!");
+                GetMove();
+            }
         }
 
         public bool IsDraw(Board board) {
@@ -83,7 +92,7 @@ namespace A1_CS251 {
 
             // Positive Diagonal check
             for (int row = 0; row < WIDTH - 3; row++) {
-                for (int col = 0; col < WIDTH - 3; col++) {
+                for (int col = 0; col < LENGTH - 3; col++) {
                     if (board.GetPosition(row + 1, col + 2) == board.GetPosition(row, col) &&
                         board.GetPosition(row + 2, col + 2) == board.GetPosition(row, col) &&
                         board.GetPosition(row + 3, col + 3) == board.GetPosition(row, col) && board.GetPosition(row, col) != '.')
@@ -106,21 +115,13 @@ namespace A1_CS251 {
             return false;
         }
 
-        int GetCount(ref Board board) {
-            int count = 1;
-            for (int i = 0; i < WIDTH; i++) {
-                for (int j = 0; j < LENGTH; j++) {
-                    if (board.GetPosition(i, j) == '.') count++;
-                }
-            }
-
-            return count;
-        }
-
-        int minimax(bool isMax, ref Board board, char symbol, char opponent) {
-            if (IsWinner(board) && !isMax) return 2 * GetCount(ref board);
-            else if (IsWinner(board) && isMax) return -1 * GetCount(ref board);
-            if (IsDraw(board)) return 1 * GetCount(ref board);
+        int minimax(bool isMax, ref Board board, char symbol, char opponent, int alpha, int beta, int depth) {
+            if (depth == 0) return 0;
+            
+            if (IsWinner(board) && !isMax) return depth;
+            else if (IsWinner(board) && isMax) return -depth;
+            if (IsDraw(board)) return 0;
+            
 
             int best = isMax ? -1000 : 1000;
             Board temp = new Board(WIDTH, LENGTH);
@@ -128,42 +129,45 @@ namespace A1_CS251 {
 
             for (int col = 1; col <= LENGTH; col++) { 
                 if(IsValidMove(board, isMax ? symbol : opponent, col)) {
-                    int val = minimax(!isMax, ref board, symbol, opponent);
-
+                    int val = minimax(!isMax, ref board, symbol, opponent, alpha, beta, depth - 1);
+                    
+                    board.SetBoard(temp.CopyBoard());
                     if (isMax) {
                         // for maximizing AI
                         // replace best with val if val > best
                         if (val > best) best = val;
+                        if(best > alpha) alpha = best;
                     } else {
                         // for minimizing player
                         // replace best with val if val < best
                         if (val < best) best = val;
+                        if(best < beta) beta = best;
                     }
-
-                    board.SetBoard(temp.CopyBoard());
+                    if (beta <= alpha) break;
                 }
+                if (beta <= alpha) break;
             }
             return best;
         }
 
         public void ComputerMove(Board board, char symbol) {
             char opponent = symbol == 'X' ? 'O' : 'X';
-            int bestScore = -1000;
+            var moves = new List<Tuple<int, int>>();
 
             Board tempBoard = new Board(WIDTH, LENGTH);
             tempBoard.SetBoard(board.CopyBoard());
 
             for (int col = 1; col <= LENGTH; col++) {
                 if (IsValidMove(board, symbol, col)) {
-                    int value = minimax(false, ref board, symbol, opponent);
+                    moves.Add(Tuple.Create(col, minimax(false, ref board, symbol, opponent, -1000, 100, 6)));
                     board.SetBoard(tempBoard.CopyBoard());
-
-                    if (value >= bestScore) {
-                        column = col;
-                        bestScore = value;
-                    }
                 }
             }
+            
+            var random = new Random();
+            int maxMoveScore = moves.Max(t => t.Item2);
+            var bestMoves = moves.Where(t => t.Item2 == maxMoveScore).ToList();
+            column = bestMoves[random.Next(0, bestMoves.Count)].Item1;
         }
     }
 }
