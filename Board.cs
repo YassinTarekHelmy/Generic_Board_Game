@@ -28,5 +28,16 @@ namespace A1_CS251 {
         public int GetLength() {
             return length;
         }
+    
+        public char[,] CopyBoard(){
+            char[,] copy = new char[width, length];
+            Array.Copy(board, 0, copy, 0, board.Length);
+            return copy;
+        }
+
+        public void SetBoard(char[,] array) {
+            this.board = array;
+        }
+
     }
 }

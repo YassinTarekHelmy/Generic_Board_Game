@@ -17,7 +17,7 @@ namespace A1_CS251 {
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("-----------------------------------------");
         }
 
         public void GetMove() {
@@ -122,9 +122,9 @@ namespace A1_CS251 {
             else if (IsWinner(board) && isMax) return -1 * GetCount(ref board);
             if (IsDraw(board)) return 1 * GetCount(ref board);
 
-
             int best = isMax ? -1000 : 1000;
-            Board temp = board;
+            Board temp = new Board(WIDTH, LENGTH);
+            temp.SetBoard(board.CopyBoard());
 
             for (int col = 1; col <= LENGTH; col++) { 
                 if(IsValidMove(board, isMax ? symbol : opponent, col)) {
@@ -140,7 +140,7 @@ namespace A1_CS251 {
                         if (val < best) best = val;
                     }
 
-                    board = temp;
+                    board.SetBoard(temp.CopyBoard());
                 }
             }
             return best;
@@ -149,12 +149,14 @@ namespace A1_CS251 {
         public void ComputerMove(Board board, char symbol) {
             char opponent = symbol == 'X' ? 'O' : 'X';
             int bestScore = -1000;
-            Board tempBoard = board;
-            
+
+            Board tempBoard = new Board(WIDTH, LENGTH);
+            tempBoard.SetBoard(board.CopyBoard());
+
             for (int col = 1; col <= LENGTH; col++) {
                 if (IsValidMove(board, symbol, col)) {
                     int value = minimax(false, ref board, symbol, opponent);
-                    board = tempBoard;
+                    board.SetBoard(tempBoard.CopyBoard());
 
                     if (value >= bestScore) {
                         column = col;
