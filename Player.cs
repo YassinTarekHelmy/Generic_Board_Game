@@ -1,3 +1,11 @@
+//This is a Program made by:
+//Student Names: Yassin Tarek Helmy ---- Nour Eldeen Ahmed ---- Mahmoud Adel Ahmed.
+//Student IDs respectively : 20210450 ---- 20210431 ---- 20210563.
+//Date: 28/2/2023.
+//Class: CS251.
+//Objective: Player Class is responsible for making an instances of a player variable that can be used to input a move and get a symbol.
+//---------------------------------------------------------------------------------------------------------------------------
+
 namespace A1_CS251 {
     public class Player {
         char order;

@@ -58,3 +58,18 @@ C:\Users\w10\Documents\GitHub\A1_CS251\bin\Debug\net7.0\GenericBoardGame.dll
 C:\Users\w10\Documents\GitHub\A1_CS251\bin\Debug\net7.0\GenericBoardGame.pdb
 C:\Users\w10\Documents\GitHub\A1_CS251\obj\Debug\net7.0\GenericBoardGame.genruntimeconfig.cache
 C:\Users\w10\Documents\GitHub\A1_CS251\obj\Debug\net7.0\ref\GenericBoardGame.dll
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\bin\Debug\net7.0\GenericBoardGame.exe
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\bin\Debug\net7.0\GenericBoardGame.deps.json
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\bin\Debug\net7.0\GenericBoardGame.runtimeconfig.json
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\bin\Debug\net7.0\GenericBoardGame.dll
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\bin\Debug\net7.0\GenericBoardGame.pdb
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\obj\Debug\net7.0\GenericBoardGame.csproj.AssemblyReference.cache
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\obj\Debug\net7.0\GenericBoardGame.GeneratedMSBuildEditorConfig.editorconfig
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\obj\Debug\net7.0\GenericBoardGame.AssemblyInfoInputs.cache
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\obj\Debug\net7.0\GenericBoardGame.AssemblyInfo.cs
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\obj\Debug\net7.0\GenericBoardGame.csproj.CoreCompileInputs.cache
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\obj\Debug\net7.0\GenericBoardGame.dll
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\obj\Debug\net7.0\refint\GenericBoardGame.dll
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\obj\Debug\net7.0\GenericBoardGame.pdb
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\obj\Debug\net7.0\GenericBoardGame.genruntimeconfig.cache
+E:\College Stuff\A1_CS251_20210450_20210431_20210563\Group Task\Task 1\A1_CS251\obj\Debug\net7.0\ref\GenericBoardGame.dll

@@ -1,3 +1,10 @@
+//This is a Program made by:
+//Student Names: Yassin Tarek Helmy ---- Nour Eldeen Ahmed ---- Mahmoud Adel Ahmed.
+//Student IDs respectively : 20210450 ---- 20210431 ---- 20210563.
+//Date: 28/2/2023.
+//Class: CS251.
+//Objective: The Class responsible for the board of the game.
+//---------------------------------------------------------------------------------------------------------------------------
 namespace A1_CS251 {
     public class Board {
         char[,] board;

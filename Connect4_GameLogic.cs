@@ -1,3 +1,11 @@
+//This is a Program made by:
+//Student Names: Yassin Tarek Helmy ---- Nour Eldeen Ahmed ---- Mahmoud Adel Ahmed.
+//Student IDs respectively : 20210450 ---- 20210431 ---- 20210563.
+//Date: 28/2/2023.
+//Class: CS251.
+//Objective: The main Logic for the connect4 Game and it contains a human and a computer.
+//---------------------------------------------------------------------------------------------------------------------------
+
 using System;
 
 namespace A1_CS251 {
