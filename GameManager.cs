@@ -47,7 +47,7 @@ namespace A1_CS251 {
                 switch (userInput) {
                     case 1:
                         player[0] = new Player('1', 'O', gameLogic);
-                        player[0] = new Player('2', 'O', gameLogic);
+                        player[1] = new Player('2', 'X', gameLogic);
                         break;
                     case 2:
                         player[0] = new Player('1', 'O', gameLogic);
