@@ -42,7 +42,7 @@ We welcome contributions to the Generic Board Game project! If you would like to
 2. Create a new branch for your contribution.
 3. Make your changes, ensuring adherence to coding standards and best practices.
 4. Test your changes to ensure they do not introduce any issues or errors.
-5. Add your info to the Contribution.md file
+5. Add your info to the Contributors.md file
 6. Submit a pull request, explaining the changes made and the purpose behind them.
 
 We appreciate their valuable contributions to the project!
